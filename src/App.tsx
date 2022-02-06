@@ -1,18 +1,12 @@
-import styled from 'styled-components';
 import { GlobalStyle } from './styles/global';
-
-const Title = styled.h1 `
-    font-size: 64px;
-    color: #8257e6;
-`;
+import { Header } from './components/Header/index';
+import { Dashboard } from './components/Dashboard';
 
 export function App() {
-  return (
-    <div className="app">
-    <Title>
-        RocketSeat
-    </Title>
-    <GlobalStyle />
-    </div>
-  );
+    return (
+        <>
+            <Header />
+            <GlobalStyle />
+        </>
+    );
 }
