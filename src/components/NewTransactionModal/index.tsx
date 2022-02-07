@@ -14,7 +14,7 @@ interface NewTransactionModalProps {
 }
 
 export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionModalProps) {
-    const [Type, setType] = useState('deposit');
+    const [type, setType] = useState('deposit');
     const [title, setTitle] = useState('');
     const [value, setValue] = useState(0);
     const [category, setCategory] = useState('');
@@ -26,7 +26,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
             title,
             value,
             category,
-            type: Type,
+            type,
         }
 
         api.post('/transactions', data);
@@ -62,7 +62,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
                 <TransactionTypeContainer>
                     <RadioBox type="button"
                         onClick={() => { setType('deposit') }}
-                        isActive={Type === 'deposit'}
+                        isActive={type === 'deposit'}
                         activeColor={'green'}
                     >
                         <img src={incomeImg} alt="Entrada" />
@@ -72,7 +72,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
                     <RadioBox
                         type="button"
                         onClick={() => { setType('withdraw') }}
-                        isActive={Type === 'withdraw'}
+                        isActive={type === 'withdraw'}
                         activeColor={'red'}
                     >
                         <img src={outcomeImg} alt="Saída" />
