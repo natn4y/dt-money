@@ -6,7 +6,6 @@ import { Container, RadioBox, TransactionTypeContainer } from './styles';
 
 import './CustomModal.css';
 import { FormEvent, useState } from 'react';
-import { api } from '../../services/api';
 import { useTransactions } from '../../hooks/useTransactions';
 
 interface NewTransactionModalProps {
